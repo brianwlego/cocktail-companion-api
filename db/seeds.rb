@@ -44,19 +44,10 @@ alpha.each do |letter|
         drink['strIngredient15'] => drink['strMeasure15']
       }
       ingredients_measurements.each_pair do |key, value|
-        if key && value 
+        if key && value
           i = Ingredient.find_or_create_by(name: key)
           Measurement.create(amount: value, cocktail_id: d.id, ingredient_id: i.id)
         end
       end
     end
 end
-
-
-
-# cocktail1 =  Cocktail.create(name: "Old Fashion", category: "cocktail", glass: "rocks", alcoholic: true, instructions: "Make it strong.", thumbnail: "https://www.liquor.com/thmb/f_Fv27Y9k7zIofk_E6rhz37BpWQ=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__08113350__bourbon-old-fashioned-720x720-recipe-ade6f7780c304999be3577e565c9bcdd.jpg", drink_id: 1)
-
-
-# ingredient1 = Ingredient.create(name: 'Whiskey', description: "You know it, you love it.")
-
-# measurements1 = Measurement.create(amount: "1.5 ounce", cocktail_id: 1, ingredient_id: 1)
