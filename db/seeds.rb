@@ -45,12 +45,14 @@ alpha.each do |letter|
       }
       ingredients_measurements.each_pair do |key, value|
         if key && value 
+          key = key.split.map(&:capitalize).join(' ')
           i = Ingredient.find_or_create_by(name: key)
           Measurement.create(amount: value, cocktail_id: d.id, ingredient_id: i.id)
         end
       end
     end
 end
+
 
 
 
