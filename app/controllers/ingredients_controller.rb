@@ -5,13 +5,9 @@ class IngredientsController < ApplicationController
     render json: ingredients
   end
 
-  private
 
-  def titlieze(ingredients)
-    stop_words = %w(and in the of an an)
-    ingredients.each do |ingredient| 
-      ingredient[:name].split.map(&:capitalize).join(' ')
-      # byebug
-    end
+  def show
+    ingredient = Ingredient.find(params[:id])
+    render json: ingredient, include: [:cocktails, :measurements]
   end
 end
