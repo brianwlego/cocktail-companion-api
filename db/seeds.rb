@@ -51,3 +51,32 @@ alpha.each do |letter|
       end
     end
 end
+
+
+
+
+
+def vodka_attribute(array)
+  array.each do |ingre|
+    ingre.description = "Vodka" if ingre.name.include?('vodka')
+    ingre.description = "Vodka" if ingre.name.include?('Vodka')
+
+    ingre.save
+  end
+end
+
+def whiskey_attribute(array)
+  array.each do |ingre|
+    ingre.description = "Whiskey" if ingre.name.include?('Whiskey')
+
+    ingre.save
+  end
+end
+
+def gin_attribute(array)
+  array.each do |ingre|
+    ingre.description = "Gin" if ingre.name.include?('Gin')
+
+    ingre.save
+  end
+end

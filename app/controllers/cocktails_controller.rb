@@ -2,7 +2,7 @@ class CocktailsController < ApplicationController
 
   def index
     cocktails = Cocktail.all
-    render json: cocktails, include: [:measurements, :ingredients]
+    render json: cocktails
   end
 
   def show
