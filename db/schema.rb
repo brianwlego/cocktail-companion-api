@@ -22,14 +22,13 @@ ActiveRecord::Schema.define(version: 2020_09_04_141322) do
     t.boolean "alcoholic"
     t.string "instructions"
     t.text "thumbnail"
-    t.integer "drink_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

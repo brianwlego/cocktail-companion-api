@@ -7,7 +7,6 @@ class CreateCocktails < ActiveRecord::Migration[6.0]
       t.boolean :alcoholic
       t.string :instructions
       t.text :thumbnail
-      t.integer :drink_id
 
       t.timestamps
     end
