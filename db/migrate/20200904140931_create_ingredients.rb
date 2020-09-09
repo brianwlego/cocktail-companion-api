@@ -4,7 +4,6 @@ class CreateIngredients < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :category
 
-      t.timestamps
     end
   end
 end

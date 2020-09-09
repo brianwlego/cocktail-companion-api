@@ -24,7 +24,8 @@ alpha.each do |letter|
         glass: drink['strGlass'],
         alcoholic: al,
         instructions: drink['strInstructions'],
-        thumbnail: drink['strDrinkThumb']
+        thumbnail: drink['strDrinkThumb'], 
+        user_made: false
       )
       ingredients_measurements = {
         drink['strIngredient1'] => drink['strMeasure1'], 

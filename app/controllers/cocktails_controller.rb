@@ -16,14 +16,24 @@ class CocktailsController < ApplicationController
     render json: cocktail, include: [:measurements, :ingredients]
   end
 
+  def update
+    cocktail = Cocktail.find(params[:id])
+    measurements = Measurement.where(cocktail_id: params[:id])
+    measurements.each {|m| m.destroy }
+    cocktail.update(cocktail_params)
+
+    render json: cocktail, include: [:measurements, :ingredients]
+  end
+
 
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :category, :glass, :alcoholic, :instructions, :thumbnail, measurements_attributes: [
+    params.require(:cocktail).permit(:name, :category, :glass, :alcoholic, :instructions, :thumbnail, :measurements_attributes => [
       :id,
       :amount,
-      :ingredient_id
+      :ingredient_id, 
+      :_destroy
     ])
   end
 
