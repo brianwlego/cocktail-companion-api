@@ -15,14 +15,11 @@ alpha.each do |letter|
   hash = response.body
 
     hash['drinks'].each do |drink|
-      al = ""
-      drink['strAlcoholic'] == "Alcoholic" ? al = true : al = false
 
       d = Cocktail.create(
         name: drink['strDrink'],
         category: drink['strCategory'],
         glass: drink['strGlass'],
-        alcoholic: al,
         instructions: drink['strInstructions'],
         thumbnail: drink['strDrinkThumb'], 
         user_made: false
