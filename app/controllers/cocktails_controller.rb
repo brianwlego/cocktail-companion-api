@@ -1,5 +1,9 @@
 class CocktailsController < ApplicationController
 
+  def wakeup
+    render json: {msg: "CC-backend, I'm awake!"}
+  end
+
   def index
     cocktails = Cocktail.all
     render json: cocktails
